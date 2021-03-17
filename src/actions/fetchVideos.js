@@ -18,6 +18,7 @@ const fetchVideos = (searchString) => {
           },
         }
       );
+
       console.log(response);
       await dispatch({
         type: types.FETCH_VIDEOS,
@@ -35,6 +36,7 @@ const fetchVideos = (searchString) => {
 
       dispatch(throwAPIError(false));
     } catch (error) {
+      console.log(error);
       dispatch(throwAPIError(true));
     }
   };
