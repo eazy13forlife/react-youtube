@@ -1,0 +1,37 @@
+.VideoItem {
+  display: flex;
+  height: 90px;
+  cursor: pointer;
+}
+.VideoItem__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-left: 0.5em;
+  padding-right: 4rem;
+  width: 100%;
+}
+
+.VideoItem__image {
+  width: 120px;
+}
+
+.VideoItem__title {
+  font-weight: bold;
+  font-size: 1.3rem;
+  min-height: 1.5rem;
+  max-height: 3rem;
+  line-height: 1.5rem;
+  overflow: hidden;
+}
+
+.VideoItem__channel,
+.Videoitem__publishTime {
+  color: rgb(166, 166, 166);
+  font-size: 1.3rem;
+}
+.VideoItem__channel {
+  height: 2rem;
+  line-height: 2rem;
+  overflow: hidden;
+}

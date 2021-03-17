@@ -1,0 +1,76 @@
+html {
+  font-size: 62.5%;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: inherit;
+}
+body,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+body {
+  box-sizing: border-box;
+}
+.ErrorApp {
+  height: 100vh;
+}
+.ErrorApp__content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.ErrorApp__content {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 50%;
+}
+.ErrorApp__title {
+  font-size: 3rem;
+}
+.ErrorApp__solution {
+  font-size: 1.6rem;
+  margin-top: 0.5rem;
+}
+.ErrorApp__image {
+  width: 300px;
+}
+.SearchBar {
+  width: 50%;
+  margin: auto;
+  padding-top: 1em;
+}
+.App__VideoDetail-VideoList {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.VideoList {
+  width: 30%;
+  margin-left: 2rem;
+}
+.VideoItem:not(.VideoItem:last-of-type) {
+  margin-bottom: 1em;
+}
+.VideoDetail {
+  width: 70%;
+  margin-left: 2rem;
+}

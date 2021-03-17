@@ -1,0 +1,8 @@
+.SearchBar__input {
+  width: 80%;
+  padding: 0.5em;
+}
+.SearchBar__button {
+  width: 20%;
+  padding: 0.5em;
+}
