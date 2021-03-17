@@ -1,6 +1,6 @@
-import React from "react";
-import { useSelector } from "react-redux";
-
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { selectVideo } from "../../actions/";
 import "./VideoDetail.css";
 
 const VideoDetail = () => {
@@ -13,7 +13,6 @@ const VideoDetail = () => {
       <iframe
         src={`https://www.youtube.com/embed/${selectedVideo.id}`}
         title={selectedVideo.title}
-        height="80%"
         width="100%"
         className="VideoDetail__iframe"
       />

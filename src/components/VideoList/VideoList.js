@@ -8,8 +8,6 @@ const VideoList = () => {
     return state.videos;
   });
   const renderedVideos = videos.map(({ id, snippet }) => {
-    console.log(snippet);
-    console.log(id);
     return (
       <VideoItem
         key={id.videoId}

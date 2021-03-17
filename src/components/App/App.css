@@ -23,6 +23,7 @@ ul {
 body {
   box-sizing: border-box;
 }
+
 .ErrorApp {
   height: 100vh;
 }
@@ -52,15 +53,21 @@ body {
 .ErrorApp__image {
   width: 300px;
 }
+.ErrorApp__API-error {
+  font-size: 2rem;
+  color: red;
+}
 .SearchBar {
   width: 50%;
   margin: auto;
   padding-top: 1em;
 }
 .App__VideoDetail-VideoList {
+  /*dsfsdfsdfsdds*/
   display: flex;
   justify-content: space-between;
   margin-top: 2rem;
+  height: 80%;
 }
 
 .VideoList {
@@ -69,6 +76,9 @@ body {
 }
 .VideoItem:not(.VideoItem:last-of-type) {
   margin-bottom: 1em;
+}
+iframe {
+  height: 60vh;
 }
 .VideoDetail {
   width: 70%;
