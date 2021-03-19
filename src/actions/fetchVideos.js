@@ -23,7 +23,6 @@ const fetchVideos = (searchString) => {
         type: types.FETCH_VIDEOS,
         payload: response.data.items,
       });
-
       const video = getState().videos[0];
 
       if (video) {
@@ -36,7 +35,6 @@ const fetchVideos = (searchString) => {
     } catch (error) {
       dispatch(throwAPIError(true));
     }
-
     dispatch(endInitialLoad());
   };
 };
