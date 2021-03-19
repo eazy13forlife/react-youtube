@@ -10,6 +10,7 @@ import warningSign from "../../images/warningsign.png";
 import stopSign from "../../images/stopsign.png";
 import useVideos from "../../custom-hooks/useVideos.js";
 import { selectVideo } from "../../actions/";
+import Error from "../Error/Error.js";
 
 const App = () => {
   useVideos("car");
@@ -21,41 +22,44 @@ const App = () => {
   const hasAPIError = useSelector((state) => {
     return state.hasAPIError;
   });
+  const initialLoadStatus = useSelector((state) => {
+    return state.initialLoadStatus;
+  });
 
   const renderMain = () => {
-    if (hasAPIError) {
+    if (initialLoadStatus === false) {
+      return null;
+    } else if (hasAPIError) {
       return (
-        <div className="ErrorApp__content-container">
+        <Error>
           <img src={stopSign} alt="stop sign" className="ErrorApp__image" />
           <p className="ErrorApp__API-error">
             Something went wrong trying to access videos. Try again.
           </p>
-        </div>
-      );
-    } else if (videos.length) {
-      return (
-        <React.Fragment>
-          <div className="App__VideoDetail-VideoList">
-            <VideoDetail />
-            <VideoList />
-          </div>
-        </React.Fragment>
+        </Error>
       );
     } else if (!videos.length) {
       return (
-        <div className="ErrorApp__content-container">
-          <div className="ErrorApp__content">
-            <img
-              src={warningSign}
-              alt="warning sign"
-              className="ErrorApp__image"
-            />
-            <h1 className="ErrorApp__title"> No results found</h1>
-            <p className="ErrorApp__solution"> Try different keywords</p>
-          </div>
-        </div>
+        <Error>
+          <img
+            src={warningSign}
+            alt="warning sign"
+            className="ErrorApp__image"
+          />
+          <h1 className="ErrorApp__title"> No results found</h1>
+          <p className="ErrorApp__solution"> Try different keywords</p>
+        </Error>
       );
     }
+
+    return (
+      <React.Fragment>
+        <div className="App__VideoDetail-VideoList">
+          <VideoDetail />
+          <VideoList />
+        </div>
+      </React.Fragment>
+    );
   };
 
   const returnClassName = () => {

@@ -27,22 +27,19 @@ body {
 .ErrorApp {
   height: 100vh;
 }
-.ErrorApp__content-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
+
 .ErrorApp__content {
   margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 30%;
-  height: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
 }
+
 .ErrorApp__title {
   font-size: 3rem;
 }
@@ -51,16 +48,20 @@ body {
   margin-top: 0.5rem;
 }
 .ErrorApp__image {
-  width: 300px;
+  width: 200px;
 }
 .ErrorApp__API-error {
   font-size: 2rem;
+  margin-top: 1rem;
   color: red;
 }
 .SearchBar {
   width: 50%;
   margin: auto;
   padding-top: 1em;
+}
+.ErrorApp__API-error {
+  white-space: nowrap;
 }
 .App__VideoDetail-VideoList {
   /*dsfsdfsdfsdds*/

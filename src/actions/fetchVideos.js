@@ -4,6 +4,7 @@ import axios from "axios";
 import throwAPIError from "./throwAPIError.js";
 import types from "./types.js";
 import selectVideo from "./selectVideo.js";
+import { endInitialLoad } from "./";
 
 const fetchVideos = (searchString) => {
   return async (dispatch, getState) => {
@@ -18,8 +19,6 @@ const fetchVideos = (searchString) => {
           },
         }
       );
-
-      console.log(response);
       await dispatch({
         type: types.FETCH_VIDEOS,
         payload: response.data.items,
@@ -33,12 +32,12 @@ const fetchVideos = (searchString) => {
           selectVideo(id.videoId, snippet.description, snippet.title)
         );
       }
-
       dispatch(throwAPIError(false));
     } catch (error) {
-      console.log(error);
       dispatch(throwAPIError(true));
     }
+
+    dispatch(endInitialLoad());
   };
 };
 
