@@ -19,10 +19,12 @@ const fetchVideos = (searchString) => {
           },
         }
       );
+
       await dispatch({
         type: types.FETCH_VIDEOS,
         payload: response.data.items,
       });
+
       const video = getState().videos[0];
 
       if (video) {
@@ -31,6 +33,7 @@ const fetchVideos = (searchString) => {
           selectVideo(id.videoId, snippet.description, snippet.title)
         );
       }
+
       dispatch(throwAPIError(false));
     } catch (error) {
       dispatch(throwAPIError(true));
